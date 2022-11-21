@@ -1,0 +1,36 @@
+<app-toolbar></app-toolbar>
+<mat-card>
+    <mat-card-title>Selection</mat-card-title>
+    <mat-card-subtitle>Start</mat-card-subtitle>
+    <mat-card-content>
+      <form>
+          <mat-form-field appearance="fill">
+            <mat-label><mat-icon>home_work</mat-icon> Cinéma</mat-label>
+            <mat-select [(value)]="selectedTheater" required>
+              <mat-option *ngFor="let theater of theaters" [value]="theater">
+                {{theater.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+  <!--
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>      
+  
+  -->
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button>
+          <mat-icon>replay</mat-icon>
+        </button>
+        <button mat-icon-button (click)="search()">
+          <mat-icon>search</mat-icon>
+        </button>
+    </mat-card-actions>
+  </mat-card>

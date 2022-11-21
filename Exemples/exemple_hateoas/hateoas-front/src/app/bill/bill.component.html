@@ -1,0 +1,20 @@
+<app-toolbar></app-toolbar>
+<mat-card> 
+    <mat-card-title>Facture</mat-card-title>
+    <mat-card-subtitle>
+        Prix total : {{booking.totalPrice}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item style="height:auto" *ngFor="let show of shows">
+                <app-show [show]="show"></app-show>
+            </mat-list-item>
+        </mat-list>
+        
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button (click)="backHome()">
+            Retour a l'acueil
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,35 @@
+<app-toolbar></app-toolbar>
+<table class="fullwidth">
+    <tr>
+        <td>
+            <mat-list class="fullwidth">
+                <mat-list-item style="height:auto" *ngFor="let show of shows">
+                    <app-show class="show" [show]="show" [withSeletion]="true" [withPoster]="true" (selected)="select($event)"></app-show>
+                </mat-list-item>
+            </mat-list>
+        </td>
+
+        <td>
+            <mat-card> 
+                <mat-card-title>Selection</mat-card-title>
+                <mat-card-content>
+                    <mat-list class="no_padding">
+                        <mat-list-item class="no_padding" style="height:auto" *ngFor="let selectedShow of selectedShows">
+                            <app-show [show]="selectedShow"></app-show>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-flat-button [disabled]="!bookingLink" (click)="booking(bookingLink)">
+                        Réserver
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </td>
+    </tr>
+</table>
+
+
+
+
+

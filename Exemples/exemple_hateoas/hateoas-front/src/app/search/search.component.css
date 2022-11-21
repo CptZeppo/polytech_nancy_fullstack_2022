@@ -1,0 +1,15 @@
+.fullwidth {
+    width: 100%;
+}
+
+table td, table td * {
+    vertical-align: top;
+}
+
+.show {
+    margin: 0% 1% 1% 1%;
+}
+
+.no_padding {
+    padding: 0;
+}

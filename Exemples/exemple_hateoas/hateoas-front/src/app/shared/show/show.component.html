@@ -1,0 +1,27 @@
+<mat-card class="show">
+    <mat-card-title>{{show.movie.title}}</mat-card-title>
+    <mat-card-content>
+        <table>
+            <tr>
+                <td>
+                    <div>Début : {{show.startTime | date:'medium'}}</div><br>
+                    <div>Fin : {{show.endTime | date:'medium'}}</div><br>
+                    <div>Prix : {{show.price|currency: 'EUR':'symbol':undefined:'fr-FR' }}</div><br>
+                    
+                </td>
+                <ng-container *ngIf="withPoster">
+                    <td>
+                        <img src="{{show.movie.posterURL}}">
+                    </td>
+                </ng-container>
+            </tr>
+        </table>
+    </mat-card-content>
+    <ng-container *ngIf="withSeletion">
+        <mat-card-actions>
+            <button mat-flat-button (click)="select(show)">
+                Choisir
+              </button>
+        </mat-card-actions>
+    </ng-container>
+</mat-card>
